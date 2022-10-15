@@ -1,0 +1,293 @@
+@import "./reset.css";
+@import '/css/fonts/stylesheet.css';
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Gilroy', sans-serif;
+  font-weight: 500;
+  color: rgba(31, 31, 31, 0.7);
+}
+
+.container {
+  max-width: 1750px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.container-right {
+  overflow-x: hidden;
+  padding-left: calc((100% - 1750px) / 2 + 15px);
+}
+
+@media (max-width: 1749px) {
+  .container-right {
+    padding-left: 15px;
+    overflow-x: hidden;
+  }
+}
+
+.none {
+  display: none !important;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.no-scroll {
+  overflow-y: hidden;
+}
+
+/* Button */
+.btn {
+  position: relative;
+
+  display: inline-block;
+  padding: 10px 24px;
+  padding-right: 72px;
+
+  border: 1px solid #114455;
+  border-radius: 2px;
+
+  font-size: 20px;
+  font-weight: 800;
+  color: #114455;
+
+  transition: color 0.15s ease-in, background-color 0.15s ease-in;
+}
+
+.btn::after {
+  content: '';
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  /* background-color: red; */
+  background-image: url('./../img/icons/arrow-right-black.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: #114455;
+  color: #fff;
+}
+
+.btn:active {
+  top: 1px;
+}
+
+.btn:hover::after {
+  background-image: url('./../img/icons/arrow-right-white.svg');
+}
+
+.btn--big {
+  padding: 14px 32px;
+  padding-right: 80px;
+}
+
+.btn--dark {
+  background-color: #114455;
+  color: #fff;
+}
+
+.btn--dark:hover,
+.btn--dark:focus {
+  background-color: #000;
+}
+
+.btn--dark::after {
+  background-image: url('./../img/icons/arrow-right-white.svg');
+}
+
+/* Header */
+.header {
+  position: relative;
+  min-height: 100vh;
+  background-color: #e1edf2;
+  background-image: url('./../img/header/header-bg.jpg');
+  background-size: cover;
+  background-position: center center;
+}
+
+.header__top {
+  margin-bottom: 126px;
+  padding: 44px 0;
+}
+
+.header__arrows {
+  position: absolute;
+  bottom: 59px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Nav */
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav__list {
+  display: flex;
+  align-items: center;
+  column-gap: 118px;
+}
+
+.nav__btn {
+  display: none;
+}
+
+.link {
+  font-size: 20px;
+  font-weight: 800;
+  color: #114455;
+}
+
+/* Header content */
+
+.header__content-mobile {
+  display: none;
+}
+
+.header__content {
+  max-width: 1060px;
+}
+
+.header__title {
+  margin-bottom: 48px;
+  max-width: 734px;
+
+  font-size: 80px;
+  font-weight: 800;
+  color: #114455;
+}
+
+.header__text {
+  margin-bottom: 72px;
+  font-size: 34px;
+  line-height: 1.57;
+  color: rgba(31, 31, 31, 0.7);
+}
+
+.header__text p+p {
+  margin-top: 1em;
+}
+
+/* Case Studies */
+
+.case-studies {
+  padding: 184px 0;
+}
+
+.case-studies__title {
+  max-width: 1070px;
+  margin-bottom: 12px;
+}
+
+.case-studies__text {
+  max-width: 1070px;
+  margin-bottom: 100px;
+}
+
+.title {
+  font-size: 80px;
+  font-weight: 800;
+  color: #1f1f1f;
+}
+
+.text {
+  font-size: 28px;
+  line-height: 1.57;
+  color: #1f1f1f;
+}
+
+/* Slider */
+
+.slide {
+  position: relative;
+  display: inline-block;
+  padding-left: 80px;
+}
+
+.slide__title {
+  position: absolute;
+  left: 0;
+  bottom: 104px;
+
+  font-size: 140px;
+  font-weight: 800;
+
+  background: linear-gradient(90deg, rgba(17, 68, 85, 1) 80px, rgba(255, 255, 255, 1) 80px);
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Video */
+
+.about {
+  padding: 144px 0;
+}
+
+.about__title {
+  max-width: 1070px;
+  margin-bottom: 12px;
+}
+
+.about__text {
+  max-width: 1070px;
+  margin-bottom: 78px;
+}
+
+.about__content {}
+
+/* Video */
+
+.video {
+  position: relative;
+}
+
+.video-overlay::after {
+  content: '';
+  position: absolute;
+  z-index: 8;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(17, 68, 85, 0.5);
+}
+
+.video__btn {
+  position: absolute;
+  z-index: 9;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.video__picture {
+  position: relative;
+  z-index: 7;
+  /* display: none; */
+}
+
+.video__object {
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  width: 100%;
+  height: 100%;
+  vertical-align: top;
+}
